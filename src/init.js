@@ -1,9 +1,9 @@
 /** @format */
-
-import express from "express";
 import dotenv from "dotenv";
+import app from "./app";
 
-const app = express();
-const PORT = parseInt(dotenv.config(), 10) || 4000;
+dotenv.config();
 
-app.listen(PORT, () => console.log(`Listening on :${PORT}`));
+const PORT = parseInt(process.env.PORT, 10) || 4000;
+
+app.listen(PORT, () => console.log(`Listening on: ${PORT}`));
